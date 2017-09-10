@@ -97,7 +97,6 @@ function vt (){
 //и нет робота среди проголосовавших за контент
 
 if(tlt!="" && parentAuthorAns==ath && path=="" && onvot=='0'){
-	//golos.broadcast.vote(k2, account2, parentAuthorAns, parentPermlinkAns, 1000, function(err, result) {console.log(err, result); });  //голосуем за пост
 	golos.broadcast.vote(k, account, parentAuthorAns, parentPermlinkAns, percent, function(err, result) {console.log(err, result); });  //голосуем за пост
 	post_body="<html><p>Ок, @"+$author+'!</p><p> Я проголосовал за пост: <a href="https://golos.io/@'+ath+"/"+parentPermlinkAns+'">'+tlt+'</a></p></html>'; //формируем тело ответного комментария
 	golos.broadcast.comment(k,$author,$permlink,account,permlinkcomm,t,post_body,jsonMetadata,function(err, result) {console.log(err, result); }); //размещаем ответный комментарий робота
